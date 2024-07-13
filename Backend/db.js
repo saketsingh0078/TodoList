@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
+const { MONGO_DB } = require("./config");
 
-mongoose.connect(
-  "mongodb+srv://admin:Yuko%4012345@cluster0.f31vu5f.mongodb.net/User"
-);
+mongoose.connect(MONGO_DB);
 
 const UserSchema = new mongoose.Schema({
   name: String,
