@@ -15,6 +15,18 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
+const TodoSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: User,
+  },
+});
+
+const Todo = mongoose.model("Todo", TodoSchema);
+
 module.exports = {
   User,
+  Todo,
 };

@@ -19,21 +19,28 @@ const Signup = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="name"
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        tpe="password"
-        placeholder="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      <div>
+        <input
+          type="text"
+          placeholder="name"
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div>
+        <input
+          tpe="password"
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+
       <button
         onClick={async () => {
           const response = await axios.post("http://localhost:3000/signup", {
