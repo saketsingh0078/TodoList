@@ -10,7 +10,6 @@ const Signup = () => {
   const fetchData = async () => {
     const response = await axios.get("http://localhost:3000/");
     setData(response.data.data);
-    console.log(response.data.data);
   };
 
   useEffect(() => {
