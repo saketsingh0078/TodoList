@@ -9,9 +9,7 @@ function App() {
   return (
     <div>
       <Signup />
-      <div className="relative w-screen h-screen">
-        <Circle />
-      </div>
+      <div className="relative w-screen h-screen"></div>
     </div>
   );
 }
