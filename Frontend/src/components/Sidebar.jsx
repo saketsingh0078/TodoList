@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../../utility/sideBarSlice";
+import { toggleMenu } from "../utility/sideBarSlice";
 
 const Sidebar = () => {
   const toggle = useSelector((store) => store.sideBar.toggle);

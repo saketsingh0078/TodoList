@@ -1,4 +1,5 @@
 import React from "react";
+import { SUPPORTED_LANGUAGE } from "../utility/constants";
 
 export const Header = () => {
   return (
@@ -8,6 +9,13 @@ export const Header = () => {
         <h1 className="font-semibold text-lg mr-3">Home</h1>
       </div>
       <div className="flex justify-between">
+        <div className="font-semibold text-lg mr-3">
+          <select>
+            {SUPPORTED_LANGUAGE.map((lang) => (
+              <option value={lang.identifier}>{lang.name}</option>
+            ))}
+          </select>
+        </div>
         <h1 className="font-semibold text-lg mr-3">About</h1>
         <h1 className="font-semibold text-lg mr-3"> Cart</h1>
         <h1 className="font-semibold text-lg mr-3">Login</h1>
