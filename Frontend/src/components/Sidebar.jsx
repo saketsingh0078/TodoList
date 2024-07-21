@@ -1,30 +1,34 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../utility/sideBarSlice";
+import { useSelector } from "react-redux";
+import { language } from "../utility/languageConstant";
 
 const Sidebar = () => {
   const toggle = useSelector((store) => store.sideBar.toggle);
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    dispatch(toggleMenu());
-  };
+  const lang = useSelector((store) => store.lang.langs);
 
   return (
-    <div className="w-[120px] shadow-md h-screen">
-      <h1 className="text-right cursor-pointer" onClick={handleClick}>
-        ^_^
-      </h1>
+    <>
       {toggle ? (
-        <ul>
-          <li className="font-semibold p-2 border-b-2">Home</li>
-          <li className="font-semibold p-2 border-b-2">Cart</li>
-          <li className="font-semibold p-2 border-b-2"> Contact</li>
-          <li className="font-semibold p-2 border-b-2">About</li>
-        </ul>
+        <div className="w-[120px] shadow-md h-[90vh]">
+          <ul>
+            <li className="font-semibold p-2 border-b-2">
+              {language[lang].home}
+            </li>
+            <li className="font-semibold p-2 border-b-2">
+              {language[lang].cart}
+            </li>
+            <li className="font-semibold p-2 border-b-2">
+              {language[lang].contact}
+            </li>
+            <li className="font-semibold p-2 border-b-2">
+              {language[lang].about}
+            </li>
+          </ul>
+        </div>
       ) : (
-        ""
+        " "
       )}
-    </div>
+    </>
   );
 };
 
