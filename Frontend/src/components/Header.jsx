@@ -32,8 +32,10 @@ export const Header = () => {
       <div className="flex justify-between">
         <div className="font-semibold text-lg border-2 border-gray-200 px-2 py-1 mr-2">
           <select onChange={handleLangChange}>
-            {SUPPORTED_LANGUAGE.map((lang) => (
-              <option value={lang.identifier}>{lang.name}</option>
+            {SUPPORTED_LANGUAGE.map((lang, index) => (
+              <option key={index} value={lang.identifier}>
+                {lang.name}
+              </option>
             ))}
           </select>
         </div>
